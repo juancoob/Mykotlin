@@ -3,6 +3,7 @@ package com.juancoob.nanodegree.and.mykotlin
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +13,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         checkFirstLetter();
         setMainMessage();
+        showToast(getString(R.string.hello_world));
     }
+
+    /**
+     * Shows a toast, but the useful code to learn is functions can use optional parameters
+     */
+    private fun showToast(text: String, className : String = MainActivity::class.java.simpleName,
+                          length : Int = Toast.LENGTH_SHORT) {
+        Toast.makeText(this, "[$className] $text", length).show()
+    }
+
 
     /**
      * Checks if the first letter is uppercase
