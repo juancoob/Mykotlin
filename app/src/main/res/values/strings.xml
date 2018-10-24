@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">My kotlin</string>
 
-    <!-- dummy string -->
+    <!-- dummy strings -->
     <string name="hello_world">Hello World!</string>
     <string name="hello_kotlin">Hello Kotlin!!</string>
+    <string name="monday">Mon 6/23 - Sunny - 31/17</string>
+    <string name="tuesday">Tue 6/24 - Foggy - 21/8</string>
+    <string name="wednesday">Wed 6/25 - Cloudy - 22/17</string>
+    <string name="thursday">Thurs 6/26 - Rainy - 18/11</string>
+    <string name="friday">Fri 6/27 - Foggy - 21/10</string>
+    <string name="saturday">Sat 6/28 - TRAPPED IN WEATHERSTATION - 23/18</string>
+    <string name="sunday">Sun 6/29 - Sunny - 20/7</string>
 </resources>
