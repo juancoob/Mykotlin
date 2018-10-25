@@ -1,7 +1,8 @@
 package com.juancoob.nanodegree.and.mykotlin
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
@@ -21,10 +22,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Shows a toast, but the useful code to learn is functions can use optional parameters
+     * Shows a toast, but the useful code to learn are functions can use optional parameters and Anko extension function
      */
-    private fun showToast(text: String, className : String = MainActivity::class.java.simpleName,
-                          length : Int = Toast.LENGTH_SHORT) {
+    private fun Context.showToast(text: String, className : String = MainActivity::class.java.simpleName,
+                                  length : Int = Toast.LENGTH_SHORT) {
         Toast.makeText(this, "[$className] $text", length).show()
     }
 
