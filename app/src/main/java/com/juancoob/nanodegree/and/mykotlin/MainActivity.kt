@@ -7,7 +7,11 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.Toast
+import com.juancoob.nanodegree.and.mykotlin.util.Request
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.longToast
+import org.jetbrains.anko.uiThread
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         showToast(getString(R.string.hello_world))
         //populateWeatherList()
         initRecyclerView()
+        getAsyncData()
     }
 
     /**
@@ -73,5 +78,17 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         val forecastList = findViewById<RecyclerView>(R.id.rv_forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
+    }
+
+    /**
+     * Function to get data asynchronously
+     */
+    private fun getAsyncData() {
+        doAsync {
+            Request(getString(R.string.vegan_url)).run()
+            uiThread {
+                longToast(getString(R.string.success))
+            }
+        }
     }
 }
