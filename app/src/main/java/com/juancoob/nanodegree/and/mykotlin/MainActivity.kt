@@ -7,11 +7,13 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.Toast
+import com.juancoob.nanodegree.and.mykotlin.data.Forecast
 import com.juancoob.nanodegree.and.mykotlin.util.Request
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.uiThread
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         //populateWeatherList()
         initRecyclerView()
         getAsyncData()
+        copyForecastData()
     }
 
     /**
@@ -39,14 +42,14 @@ class MainActivity : AppCompatActivity() {
      * Checks if the first letter is uppercase
      */
     fun checkFirstLetter() {
-        Log.d("HiTag", isFirstLetterUppercase("Hi").toString())
-        Log.d("HiTag", isFirstLetterUppercase("HI").toString())
-        Log.d("HiTag", isFirstLetterUppercase("HI hi").toString())
-        Log.d("HiTag", isFirstLetterUppercase("hI").toString())
-        Log.d("HiTag", isFirstLetterUppercase("hi").toString())
-        Log.d("HiTag", isFirstLetterUppercase("hiI! Hi").toString())
-        Log.d("HiTag", isFirstLetterUppercase("hi!!").toString())
-        Log.d("HiTag", isFirstLetterUppercase("hi!! Hi").toString())
+        Log.d(getString(R.string.hi_tag), isFirstLetterUppercase(getString(R.string.hi1)).toString())
+        Log.d(getString(R.string.hi_tag), isFirstLetterUppercase(getString(R.string.hi2)).toString())
+        Log.d(getString(R.string.hi_tag), isFirstLetterUppercase(getString(R.string.hi3)).toString())
+        Log.d(getString(R.string.hi_tag), isFirstLetterUppercase(getString(R.string.hi4)).toString())
+        Log.d(getString(R.string.hi_tag), isFirstLetterUppercase(getString(R.string.hi5)).toString())
+        Log.d(getString(R.string.hi_tag), isFirstLetterUppercase(getString(R.string.hi6)).toString())
+        Log.d(getString(R.string.hi_tag), isFirstLetterUppercase(getString(R.string.hi7)).toString())
+        Log.d(getString(R.string.hi_tag), isFirstLetterUppercase(getString(R.string.hi8)).toString())
     }
 
     /**
@@ -90,5 +93,19 @@ class MainActivity : AppCompatActivity() {
                 longToast(getString(R.string.success))
             }
         }
+    }
+
+    /**
+     * Function to copy data from the Forecast data class
+     */
+    private fun copyForecastData() {
+        val forecast1 = Forecast(Date(), 20.4f, getString(R.string.cloudy))
+        val forecast2 = forecast1.copy(temperature = 25.5f, detail = getString(R.string.sunny))
+        val (date, temp, det) = forecast2
+        val areEquals = forecast1.equals(forecast2)
+        Log.d(javaClass.simpleName, date.toString())
+        Log.d(javaClass.simpleName, temp.toString())
+        Log.d(javaClass.simpleName, det)
+        Log.d(javaClass.simpleName, areEquals.toString())
     }
 }
