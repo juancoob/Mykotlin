@@ -18,4 +18,15 @@
     <string name="friday">Fri 6/27 - Foggy - 21/10</string>
     <string name="saturday">Sat 6/28 - TRAPPED IN WEATHERSTATION - 23/18</string>
     <string name="sunday">Sun 6/29 - Sunny - 20/7</string>
+    <string name="cloudy">Cloudy</string>
+    <string name="sunny">Sunny</string>
+    <string name="hi_tag">HiTag</string>
+    <string name="hi1">Hi</string>
+    <string name="hi2">HI</string>
+    <string name="hi3">HI hi</string>
+    <string name="hi4">hI</string>
+    <string name="hi5">hi</string>
+    <string name="hi6">hiI! Hi</string>
+    <string name="hi7">hi!!</string>
+    <string name="hi8">hi!! Hi</string>
 </resources>
