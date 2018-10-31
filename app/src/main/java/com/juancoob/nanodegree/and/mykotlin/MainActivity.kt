@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.Toast
-import com.juancoob.nanodegree.and.mykotlin.data.Forecast
+import com.juancoob.nanodegree.and.mykotlin.data.dummyForecast
 import com.juancoob.nanodegree.and.mykotlin.util.Request
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         //populateWeatherList()
         initRecyclerView()
         getAsyncData()
-        copyForecastData()
+        copyDummyForecastData()
     }
 
     /**
@@ -98,11 +98,11 @@ class MainActivity : AppCompatActivity() {
     /**
      * Function to copy data from the Forecast data class
      */
-    private fun copyForecastData() {
-        val forecast1 = Forecast(Date(), 20.4f, getString(R.string.cloudy))
-        val forecast2 = forecast1.copy(temperature = 25.5f, detail = getString(R.string.sunny))
-        val (date, temp, det) = forecast2
-        val areEquals = forecast1.equals(forecast2)
+    private fun copyDummyForecastData() {
+        val dummyForecast1 = dummyForecast(Date(), 20.4f, getString(R.string.cloudy))
+        val dummyForecast2 = dummyForecast1.copy(temperature = 25.5f, detail = getString(R.string.sunny))
+        val (date, temp, det) = dummyForecast2
+        val areEquals = dummyForecast1.equals(dummyForecast2)
         Log.d(javaClass.simpleName, date.toString())
         Log.d(javaClass.simpleName, temp.toString())
         Log.d(javaClass.simpleName, det)
