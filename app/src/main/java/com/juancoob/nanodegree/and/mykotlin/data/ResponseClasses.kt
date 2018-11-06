@@ -3,12 +3,14 @@ package com.juancoob.nanodegree.and.mykotlin.data
 import java.util.*
 
 /**
+ * Data classes to save data
+ *
  * Created by Juan Antonio Cobos Obrero on 28/10/18.
  */
-data class ForecastResult(val City : City, val list : List<Forecast>)
+data class ForecastResult(val city : City, val list : List<Forecast>)
 
 data class City(val id: Long, val name : String, val coord : Coordinates, val country : String,
-                val Population : Int)
+                val population : Int)
 
 data class Coordinates(val lon : Float, val lat : Float)
 
