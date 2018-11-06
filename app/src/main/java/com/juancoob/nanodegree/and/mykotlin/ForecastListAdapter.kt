@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 /**
+ * RecyclerView adapter to show the forecast
+ *
  * Created by Juan Antonio Cobos Obrero on 24/10/18.
  */
 class ForecastListAdapter(private val items: List<String>) : RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {

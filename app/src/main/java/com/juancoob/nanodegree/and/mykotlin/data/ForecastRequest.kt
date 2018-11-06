@@ -5,6 +5,8 @@ import java.net.URL
 
 
 /**
+ * Class which request the forecast
+ *
  * Created by Juan Antonio Cobos Obrero on 2/11/18.
  */
 class ForecastRequest(private val zipCode : String) {
