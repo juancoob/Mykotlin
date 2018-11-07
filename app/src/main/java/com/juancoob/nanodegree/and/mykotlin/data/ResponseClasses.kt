@@ -24,3 +24,5 @@ data class Temperature(val day: Float, val min: Float, val max: Float, val night
 data class Weather(val id: Long, val main: String, val description: String, val icon: String)
 
 data class dummyForecast(val date : Date, val temperature : Float, val detail : String)
+
+data class dummyWeather(val id: Long, val temperature : Long, val description : String)
