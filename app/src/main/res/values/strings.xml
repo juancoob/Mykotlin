@@ -1,12 +1,17 @@
 <resources>
     <string name="app_name">My kotlin</string>
 
+    <!-- concatenated messages -->
+    <string name="three_slashes_string" translatable="false">%1$s-%2$s-%3$s</string>
+
+    <!-- command number -->
+    <string name="command_number" translatable="false">94043</string>
 
     <!-- success message -->
     <string name="success">Success!</string>
 
     <!-- URL -->
-    <string name="vegan_url">https://www.vegguide.org/search/by-lat-long/44.9617005,-93.2766566/filter/category_id=1;veg_level=4</string>
+    <string name="vegan_url" translatable="false">https://www.vegguide.org/search/by-lat-long/44.9617005,-93.2766566/filter/category_id=1;veg_level=4</string>
 
     <!-- dummy strings -->
     <string name="hello_world">Hello World!</string>
