@@ -1,4 +1,4 @@
-package com.juancoob.nanodegree.and.mykotlin
+package com.juancoob.nanodegree.and.mykotlin.ui.adapter
 
 import android.content.Context
 import android.os.Bundle
@@ -7,11 +7,11 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.Toast
+import com.juancoob.nanodegree.and.mykotlin.R
 import com.juancoob.nanodegree.and.mykotlin.data.dummyForecast
-import com.juancoob.nanodegree.and.mykotlin.util.Request
+import com.juancoob.nanodegree.and.mykotlin.domain.commands.RequestForecastCommand
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.longToast
 import org.jetbrains.anko.uiThread
 import java.util.*
 
@@ -88,9 +88,11 @@ class MainActivity : AppCompatActivity() {
      */
     private fun getAsyncData() {
         doAsync {
-            Request(getString(R.string.vegan_url)).run()
+            //Request(getString(R.string.vegan_url)).run()
+            val result = RequestForecastCommand(getString(R.string.command_number)).execute()
             uiThread {
-                longToast(getString(R.string.success))
+                //longToast(getString(R.string.success))
+                rv_forecast_list.adapter = ForecastListAdapter(result);
             }
         }
     }
