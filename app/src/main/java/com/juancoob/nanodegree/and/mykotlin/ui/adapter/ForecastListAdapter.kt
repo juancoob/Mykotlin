@@ -12,10 +12,10 @@ import com.juancoob.nanodegree.and.mykotlin.domain.model.ForecastList
  */
 class ForecastListAdapter(private val weekForecast: ForecastList) :
         RecyclerView.Adapter<ForecastListAdapter.ViewHolder?>() {
-    override fun getItemCount(): Int = weekForecast.dailyForecast.size
+    override fun getItemCount(): Int = weekForecast.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        with(weekForecast.dailyForecast[position]) {
+        with(weekForecast[position]) {
             holder.textView.text = "$date - $description - $high/$low"
         }
     }
