@@ -6,6 +6,11 @@ package com.juancoob.nanodegree.and.mykotlin.domain.model
  * Created by Juan Antonio Cobos Obrero on 4/11/18.
  */
 
-data class ForecastList(val city : String, val country : String, val dailyForecast : List<anotherForecastDataClass>)
+data class ForecastList(val city: String, val country: String, val dailyForecast: List<anotherForecastDataClass>) {
+    val size: Int
+        get() = dailyForecast.size
 
-data class anotherForecastDataClass(val date : String, val description : String, val high : Int, val low : Int)
+    operator fun get(position: Int): anotherForecastDataClass = dailyForecast[position]
+}
+
+data class anotherForecastDataClass(val date: String, val description: String, val high: Int, val low: Int)
