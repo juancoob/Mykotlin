@@ -26,5 +26,3 @@ data class Weather(val id: Long, val main: String, val description: String, val 
 data class dummyForecast(val date : Date, val temperature : Float, val detail : String)
 
 data class dummyWeather(val id: Long, val temperature : Long, val description : String)
-
-data class dummyCity(val id: Long, val place: String, val description : String)
