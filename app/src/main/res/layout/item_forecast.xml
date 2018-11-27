@@ -1,34 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteY="81dp">
 
     <ImageView
         android:id="@+id/iv_icon"
         android:layout_width="@dimen/icon_item_forecast"
-        tools:src="@mipmap/ic_launcher"
         android:layout_height="@dimen/icon_item_forecast"
-        android:contentDescription="@string/cd_icon_item_forecast" />
+        android:layout_margin="@dimen/default_margin"
+        android:contentDescription="@string/cd_icon_item_forecast"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/tv_date"
-        tools:text="@string/dummy_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_description"
+        app:layout_constraintLeft_toRightOf="@+id/iv_icon"
+        app:layout_constraintStart_toEndOf="@+id/iv_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/dummy_date" />
 
     <TextView
         android:id="@+id/tv_description"
-        android:layout_width="match_parent"
-        tools:text="@string/sunny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        android:layout_height="match_parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/iv_icon"
+        app:layout_constraintStart_toEndOf="@+id/iv_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        tools:text="@string/sunny" />
 
     <TextView
         android:id="@+id/tv_max_temperature"
-        tools:text="@string/monday"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/tv_min_temperature"
+        app:layout_constraintLeft_toRightOf="@+id/tv_date"
+        app:layout_constraintStart_toEndOf="@+id/tv_date"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/dummy_max_degrees" />
+
+    <TextView
+        android:id="@+id/tv_min_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_date"
+        app:layout_constraintStart_toEndOf="@+id/tv_date"
+        app:layout_constraintTop_toBottomOf="@+id/tv_max_temperature"
+        tools:text="@string/dummy_min_degrees" />
 
 </android.support.constraint.ConstraintLayout>
