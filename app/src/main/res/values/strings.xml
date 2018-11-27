@@ -29,6 +29,8 @@
     <string name="cloudy">Cloudy</string>
     <string name="sunny">Sunny</string>
     <string name="dummy_date">October 14, 1987</string>
+    <string name="dummy_min_degrees">15</string>
+    <string name="dummy_max_degrees">30</string>
     <string name="hi_tag">HiTag</string>
     <string name="hi1">Hi</string>
     <string name="hi2">HI</string>
