@@ -13,4 +13,5 @@ data class ForecastList(val city: String, val country: String, val dailyForecast
     operator fun get(position: Int): anotherForecastDataClass = dailyForecast[position]
 }
 
-data class anotherForecastDataClass(val date: String, val description: String, val high: Int, val low: Int)
+data class anotherForecastDataClass(val date: String, val description: String, val high: Int,
+                                    val low: Int, val iconUrl: String)
