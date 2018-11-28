@@ -30,6 +30,8 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$support_version"
     implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
     implementation "com.google.code.gson:gson:$gson_version"
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+    implementation "com.android.support:exifinterface:$support_version"
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "com.android.support.test:runner:$test_runner_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_core_version"
