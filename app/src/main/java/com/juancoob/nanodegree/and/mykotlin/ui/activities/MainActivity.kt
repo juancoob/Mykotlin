@@ -10,8 +10,10 @@ import android.widget.Toast
 import com.juancoob.nanodegree.and.mykotlin.R
 import com.juancoob.nanodegree.and.mykotlin.data.dummyForecast
 import com.juancoob.nanodegree.and.mykotlin.domain.commands.RequestForecastCommand
+import com.juancoob.nanodegree.and.mykotlin.domain.model.anotherForecastDataClass
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 import java.util.*
 
@@ -92,7 +94,12 @@ class MainActivity : AppCompatActivity() {
             val result = RequestForecastCommand(getString(R.string.command_number)).execute()
             uiThread {
                 //longToast(getString(R.string.success))
-                rv_forecast_list.adapter = ForecastListAdapter(result);
+                rv_forecast_list.adapter = ForecastListAdapter(result,
+                        object : ForecastListAdapter.OnItemClickListener {
+                            override fun invoke(forecast: anotherForecastDataClass) {
+                                toast(forecast.date)
+                            }
+                        });
             }
         }
     }
