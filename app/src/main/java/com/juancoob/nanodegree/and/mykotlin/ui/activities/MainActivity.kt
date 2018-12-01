@@ -110,6 +110,7 @@ class MainActivity : AppCompatActivity() {
     private fun copyDummyForecastData() {
         val dummyForecast1 = dummyForecast(Date(), 20.4f, getString(R.string.cloudy))
         val dummyForecast2 = dummyForecast1.copy(temperature = 25.5f, detail = getString(R.string.sunny))
+        val dummyForecast3 = dummyForecast2.copy(temperature = 27.5f, detail = getString(R.string.cloudy))
         val (date, temp, det) = dummyForecast2
         val areEquals = dummyForecast1.equals(dummyForecast2)
         Log.d(javaClass.simpleName, date.toString())
