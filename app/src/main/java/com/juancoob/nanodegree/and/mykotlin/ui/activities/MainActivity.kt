@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
     /**
      * Shows a toast, but the useful code to learn are functions can use optional parameters and Anko extension function
      */
-    private fun Context.showToast(text: String, className : String = MainActivity::class.java.simpleName,
-                                  length : Int = Toast.LENGTH_SHORT) {
+    private fun Context.showToast(text: String, className: String = MainActivity::class.java.simpleName,
+                                  length: Int = Toast.LENGTH_SHORT) {
         Toast.makeText(this, "[$className] $text", length).show()
     }
 
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
      * Init the dummy list to show it on the recyclerView
      */
     private fun populateWeatherList() = listOf(getString(R.string.monday), getString(R.string.tuesday), getString(R.string.wednesday),
-                getString(R.string.thursday), getString(R.string.friday), getString(R.string.saturday), getString(R.string.sunday))
+            getString(R.string.thursday), getString(R.string.friday), getString(R.string.saturday), getString(R.string.sunday))
 
     /**
      * Initialise the recyclerView to show the weather
@@ -94,12 +94,10 @@ class MainActivity : AppCompatActivity() {
             val result = RequestForecastCommand(getString(R.string.command_number)).execute()
             uiThread {
                 //longToast(getString(R.string.success))
-                rv_forecast_list.adapter = ForecastListAdapter(result,
-                        object : ForecastListAdapter.OnItemClickListener {
-                            override fun invoke(forecast: anotherForecastDataClass) {
-                                toast(forecast.date)
-                            }
-                        });
+                rv_forecast_list.adapter = ForecastListAdapter(result) {
+                    anotherForecastDataClass -> toast(anotherForecastDataClass.date)
+                    //toast(it.date) // This is another way using "it" to prevent us from defining the left part of the function
+                }
             }
         }
     }
